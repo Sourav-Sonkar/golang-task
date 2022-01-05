@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "99d06b29-c8b8-4bf4-8781-6f7f23831475",
+		"name": "Golang Task Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/getUsers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"getUsers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/getUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"getUsers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Allow-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencode"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 06:14:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "322"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"_id\":\"61d4890b4d79c12abce0285e\",\"name\":\"new\",\"dob\":\"12-Jan-1998\",\"address\":\"Address\",\"description\":\"description\",\"createdAt\":\"2022-01-04T17:51:07.566Z\"},{\"_id\":\"61d5271d76fefd2626577bd9\",\"name\":\"Sourav\",\"dob\":\"12-Jan-1998\",\"address\":\"Ambala\",\"description\":\"THis is description\",\"createdAt\":\"2022-01-05T05:05:33.589Z\"}]\n"
+				}
+			]
+		},
+		{
+			"name": "Create A User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sourav 1\",\r\n    \"dob\":\"12-Jan-1998\",\r\n    \"address\":\"Ambala\",\r\n    \"description\":\"THis is description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/createUser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"createUser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Sourav\",\r\n    \"dob\":\"12-Jan-1998\",\r\n    \"address\":\"Ambala\",\r\n    \"description\":\"THis is description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/createUser",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"createUser"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Allow-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencode"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 06:20:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						}
+					],
+					"cookie": [],
+					"body": "{\"_id\":\"61d53892cd4d87f95e74d0ef\",\"name\":\"Sourav\",\"dob\":\"12-Jan-1998\",\"address\":\"Ambala\",\"description\":\"THis is description\",\"createdAt\":\"2022-01-05T11:50:02.365071+05:30\"}\n"
+				}
+			]
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"No name\",\r\n    \"dob\":\"12-Jan-1999\",\r\n    \"address\":\"Ambala\",\r\n    \"description\":\"THis is description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/updateUser/61d53c1bb3c36968d7c78642",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"updateUser",
+						"61d53c1bb3c36968d7c78642"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update User",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"No name\",\r\n    \"dob\":\"12-Jan-1999\",\r\n    \"address\":\"Ambala\",\r\n    \"description\":\"THis is description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/updateUser/61d4890b4d79c12abce0285e",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"updateUser",
+								"61d4890b4d79c12abce0285e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Allow-Control-Allow-Methods",
+							"value": "PUT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencode"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 06:27:18 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "162"
+						}
+					],
+					"cookie": [],
+					"body": "{\"_id\":\"61d4890b4d79c12abce0285e\",\"name\":\"No name\",\"dob\":\"12-Jan-1999\",\"address\":\"Ambala\",\"description\":\"THis is description\",\"createdAt\":\"0001-01-01T00:00:00Z\"}\n"
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/deleteUser/61d53892cd4d87f95e74d0ef",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"deleteUser",
+						"61d53892cd4d87f95e74d0ef"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/deleteUser/61d53892cd4d87f95e74d0ef",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"deleteUser",
+								"61d53892cd4d87f95e74d0ef"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Allow-Control-Allow-Methods",
+							"value": "DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencode"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 06:22:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						}
+					],
+					"cookie": [],
+					"body": "\"61d53892cd4d87f95e74d0ef\"\n"
+				}
+			]
+		},
+		{
+			"name": "Get One User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/getUser/61d4890b4d79c12abce0285e",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"getUser",
+						"61d4890b4d79c12abce0285e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get One User",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getUser/61d4890b4d79c12abce0285e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getUser",
+								"61d4890b4d79c12abce0285e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Allow-Control-Allow-Methods",
+							"value": "GET"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencode"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 06:31:22 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "166"
+						}
+					],
+					"cookie": [],
+					"body": "{\"_id\":\"61d4890b4d79c12abce0285e\",\"name\":\"No name\",\"dob\":\"12-Jan-1999\",\"address\":\"Ambala\",\"description\":\"THis is description\",\"createdAt\":\"2022-01-04T17:51:07.566Z\"}\n"
+				}
+			]
+		},
+		{
+			"name": "Delete All Users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/deleteAllUsers",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"deleteAllUsers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete All Users",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/deleteAllUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"deleteAllUsers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Allow-Control-Allow-Methods",
+							"value": "DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencode"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 06:33:50 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						}
+					],
+					"cookie": [],
+					"body": "\"All users deleted\"\n"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:4000"
+		}
+	]
+}
